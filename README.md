@@ -2,7 +2,7 @@
 Preparatory Project based on HTML, CSS and PHP
 
 
-## Functionality
+## Functionalities
  - Adding the Books
  - Explore and View All books in the Stacks
  
