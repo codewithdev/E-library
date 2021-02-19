@@ -38,7 +38,7 @@ include "navbar.php";
       echo "<td>"; echo  $row['URL']; echo "</td>";
       echo "</tr>";
     }
-echo "</table>";
+echo"</table>";
 ?>
 </body>
 </html>

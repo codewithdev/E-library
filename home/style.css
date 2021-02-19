@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
 body{
   background-image: url(../assets/images/wall.jpg);
   margin:0;
@@ -57,7 +59,6 @@ form .submit: hover{
   figure.thumb {
   margin: 0;
   display: inline-block;
-  vertical-align: top;
 }
 
 .thumb h2, 
@@ -67,16 +68,20 @@ form .submit: hover{
 
 .thumb h2 {
   font-weight: 700;
-  font-size: 18px;
-  color: gray;
+  font-size: 19px;
+  color: #EDCF8E;
   margin-top: 20px;
+  font-family: 'Dancing Script', cursive;
+  text-transform: capitalize;
 }
 
 .thumb .author{
-  font-size: 14px;
+  font-size: 15px;
   margin-top: 5px;
-  color: gray;
-  font-weight: 400;
+  color: #EDCF8E;
+  font-weight: 600;
+  font-family: 'Dancing Script', cursive;
+  text-transform: capitalize; 
 }
 
 .wall-c {
