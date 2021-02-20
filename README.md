@@ -17,7 +17,7 @@ Preparatory Project based on HTML, CSS and PHP
 | col 3 is |--------  |-----|----------| ---------|----------|
  
 ### Tools & Technology Used
- - Basic Web Development tools and frameword, Bootstrap, HTML5, CSS3
+ - Basic Web Development tools and frameworks, Bootstrap, HTML5, CSS3
  - MySQL 5.0.5 or later
  - PHP 5.0.2 or later.
  
