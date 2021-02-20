@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Animated Header with Responsive NavBar</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
