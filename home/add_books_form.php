@@ -44,12 +44,11 @@ include "navbar.php";
 <?php
   if(isset($_POST['submit']))
   {
-    $query= "INSERT INTO `books`(`isbn`, `title`, `author`, `image`, `description`, `url`) VALUES ('$_POST[isbn]','$_POST[title]','$_POST[author]','$_POST[image]','$_POST[description]','$_POST[url]')";
-     mysqli_query($db,$query);
+     mysqli_query($db,"INSERT INTO `books`(`isbn`, `title`, `author`, `image`, `description`, `url`) VALUES ('$_POST[isbn]','$_POST[title]','$_POST[author]','$_POST[image]','$_POST[description]','$_POST[url]');");
   ?>
   <script type="text/javascript">
     alert("Book Added Successfully!");
-    document.location.href="home.php";
+    window.location.href="home.php";
   </script>
   <?php 
    }

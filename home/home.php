@@ -13,27 +13,38 @@ include "navbar.php";
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   <link rel="stylesheet" href="style.css?v=<?php echo time();?>"/>
+   <link rel="stylesheet" href="style.css"/>
   </head>
   <body>
 
-
 <?php 
- $res= mysqli_query($db,"SELECT `title`, `author`, `image` FROM `books`;");
+ $res= mysqli_query($db,"SELECT `title`, `author`, `image`, `description`, `url` FROM `books`;");
   while($row= mysqli_fetch_assoc($res)){
        $url= $row['image'];
+       $button_var = $row['url'];
     ?>
-<figure class="thumb">
-  <div class="wall-c">
-  <img src="<?php echo $url; ?>">
-  </div>
-
-  <h2><?php echo $row['title'];?></h2>
-  <p class="author">by <?php echo $row['author'];?></p>
-</figure>
+<ul class="bookshelf">
+  <li class="bookshelf-book">
+      <div class="ribbon-new">
+        <div>New</div>
+      </div>
+      <img src="<?php echo $url; ?>">
+      <div class="bookshelf-caption bottom-to-top">
+        <h4><?php echo $row['title'];?></h4>
+        <p><?php echo $row['description'];?></p><br>
+        <button onclick="onclickRedirect()">Read More</button>
+      </div>
+  </li>
+</ul>
 <?php
 }
 ?>   
+
 <script type="text/javascript" src="../assets/js/script.js"></script>
+<script type="text/javascript">
+  function onclickRedirect(){
+          window.location.href="<?php echo $button_var?>";
+}
+</script>
 </body>
 </html>
