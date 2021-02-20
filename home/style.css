@@ -53,69 +53,6 @@ form .submit: hover{
   cursor: pointer;
 }
 
-
-/* Books*/
-/*
-  figure.thumb {
-  margin: 0;
-  display: inline-block;
-  box-shadow: inset 0 0 5px 2px white;
-}
-
-.thumb h2, 
-.thumb p {
-  margin: 0;
-}
-
-.thumb h2 {
-  font-weight: 700;
-  font-size: 19px;
-  color: #EDCF8E;
-  margin-top: 20px;
-  font-family: 'Dancing Script', cursive;
-  text-transform: capitalize;
-  white-space: initial;
-}
-
-.thumb .author{
-  font-size: 15px;
-  margin-top: 15px;
-  color: #EDCF8E;
-  font-weight: 600;
-  font-family: 'Dancing Script', cursive;
-  text-transform: capitalize; 
-}
-
-.wall-c {
-  display: inline-block;
-  position: relative;
-  margin-right: 5px;
-  margin-top: 15px;
-
-}
-
-.wall-c:after{
-  content: '';
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  box-shadow: inset 1px 0 rgba(0,0,0,.25), 0 1px rgba(0,0,0,.25);
-}
-
-
-.wall-c img {
-  height: 250px;
-  display: block;
-  position: relative;
-
-}
-
-*/
-
-
-
 .bookshelf-book {
   list-style-type:none;
   float:left;

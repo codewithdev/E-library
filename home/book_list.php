@@ -35,7 +35,7 @@ include "navbar.php";
       echo "<td>"; echo  $row['author']; echo "</td>";
       echo "<td>"; echo  $row['image']; echo "</td>";
       echo "<td>"; echo  $row['description']; echo "</td>";
-      echo "<td>"; echo  $row['URL']; echo "</td>";
+      echo "<td>"; echo  $row['url']; echo "</td>";
       echo "</tr>";
     }
 echo"</table>";

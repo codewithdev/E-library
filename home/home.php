@@ -20,7 +20,7 @@ include "navbar.php";
 <?php 
  $res= mysqli_query($db,"SELECT `title`, `author`, `image`, `description`, `url` FROM `books`;");
   while($row= mysqli_fetch_assoc($res)){
-       $url= $row['image'];
+       $imageurl= $row['image'];
        $button_var = $row['url'];
     ?>
 <ul class="bookshelf">
@@ -28,7 +28,7 @@ include "navbar.php";
       <div class="ribbon-new">
         <div>New</div>
       </div>
-      <img src="<?php echo $url; ?>">
+      <img src="<?php echo $imageurl;?>">
       <div class="bookshelf-caption bottom-to-top">
         <h4><?php echo $row['title'];?></h4>
         <p><?php echo $row['description'];?></p><br>
