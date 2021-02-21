@@ -6,7 +6,10 @@ body{
   padding: 0;
   text-align: center;
   background-size: cover;
+  height: 100%; 
+  position: initial;
 }
+html { overflow-y: scroll; overflow-x:hidden; }
 
 .form-title{
   
@@ -156,7 +159,7 @@ form .submit: hover{
   box-sizing: border-box;
 }
  
-body, html { height: 100%; overflow: hidden;}
+
 ul, ol { list-style: none; }
  
 header {
@@ -249,3 +252,19 @@ header nav li a:hover:before , header nav li a:hover:after {
   }
 }
 
+
+
+/* Scrollbar Fix */
+
+body::-webkit-scrollbar {
+  width: 1em;
+}
+ 
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: #230007;
+  outline: 2px solid slategrey;
+}

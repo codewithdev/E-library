@@ -32,7 +32,7 @@ include "navbar.php";
   <input name= "title" type="text" class="form-control" placeholder="Enter Book Title" required><br>
   <input name= "author" type="text" class="form-control" placeholder="Author Name" required><br>
   <input name= "image" type="text" class="form-control" placeholder="Enter Image URL" id= "upload-item"><br>
-  <textarea name= "description" class="form-control" placeholder="Enter description of the book" row=4 required></textarea><br>
+  <textarea name= "description" class="form-control" placeholder="Enter description of the book" row=4></textarea><br>
   <input name= "url" type="text" class="form-control" placeholder="Enter book URL"><br>
   <button type="submit" class="btn btn-success btn-flat" name="submit">Submit</button>
   </form>

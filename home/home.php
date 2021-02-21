@@ -32,7 +32,7 @@ include "navbar.php";
       <div class="bookshelf-caption bottom-to-top">
         <h4><?php echo $row['title'];?></h4>
         <p><?php echo $row['description'];?></p><br>
-        <button onclick="onclickRedirect()">Read More</button>
+        <a href="<?php echo $button_var?>">Read More</a></button>
       </div>
   </li>
 </ul>
@@ -41,10 +41,5 @@ include "navbar.php";
 ?>   
 
 <script type="text/javascript" src="../assets/js/script.js"></script>
-<script type="text/javascript">
-  function onclickRedirect(){
-          window.location.href="<?php echo $button_var?>";
-}
-</script>
 </body>
 </html>
