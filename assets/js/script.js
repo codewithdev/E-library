@@ -33,92 +33,27 @@ function lazyLoad() {
 
 //Navigation Bar Design
 
-const openIcon = document.querySelector('.icon');
-const linksWrapper = document.querySelector('.links-wrapper');
-const backdrop = document.querySelector('.backdrop');
-const closeIcon = document.querySelector('.close-btn');
-
-openIcon.addEventListener('click', () => {
-	linksWrapper.classList.add('open');
-});
-closeIcon.addEventListener('click', () => {
-	linksWrapper.classList.remove('open');
-});
-backdrop.addEventListener('click', () => {
-	linksWrapper.classList.remove('open');
-});
-
-
-
-
-var scroller = document.querySelector('.gallery-row-scroll');
-var leftArrow = document.getElementById('leftArrow');
-
-var direction = 0;
-var active = false;
-var max = 10;
-var Vx = 0;
-var x = 0.0;
-var prevTime = 0;
-var f = 0.2;
-var prevScroll = 0;
-
-function physics(time) {
-  // Measure how much time has passed
-  var diffTime = time - prevTime;
-  if (!active) {
-    diffTime = 80;
-    active = true;
-  }
-  prevTime = time;
-
-  // Give power to the scrolling
-
-  console.log(diffTime);
-
-  Vx = (direction * max * f + Vx * (1-f)) * (diffTime / 20);
-
-  x += Vx;
-  var thisScroll = scroller.scrollLeft;
-  var nextScroll = Math.floor(thisScroll + Vx);
-
-  if (Math.abs(Vx) > 0.5 && nextScroll !== prevScroll) {
-    scroller.scrollLeft = nextScroll;
-    requestAnimationFrame(physics);
-  } else {
-    Vx = 0;
-    active = false;
-  }
-  prevScroll = nextScroll;
+function navSlide() {
+    const burger = document.querySelector(".burger");
+    const nav = document.querySelector(".nav-links");
+    const navLinks = document.querySelectorAll(".nav-links li");
+    
+    burger.addEventListener("click", () => {
+        //Toggle Nav
+        nav.classList.toggle("nav-active");
+        
+        //Animate Links
+        navLinks.forEach((link, index) => {
+            if (link.style.animation) {
+                link.style.animation = ""
+            } else {
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`;
+            }
+        });
+        //Burger Animation
+        burger.classList.toggle("toggle");
+    });
+    
 }
 
-leftArrow.addEventListener('mousedown', function () {
-  direction = -1;
-  if (!active) {
-    requestAnimationFrame(physics);
-  }
-});
-
-leftArrow.addEventListener('mouseup', function () {
-  direction = 0;
-});
-
-rightArrow.addEventListener('mousedown', function () {
-  direction = 1;
-  if (!active) {
-    requestAnimationFrame(physics);
-  }
-});
-rightArrow.addEventListener('mouseup', function(event){
-  direction = 0;
-});
-
-// controller stuff
-var widthControlled = document.getElementById('widthControlled');
-var widthController = document.getElementById('widthController');
-widthController.addEventListener('input', function (event) {
-  widthControlled.style.width = this.value;
-});
-
-
-
+navSlide();

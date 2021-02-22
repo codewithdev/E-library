@@ -3,65 +3,22 @@
 body{
   background-image: url(../assets/images/wall.jpg);
   margin:0;
-  padding: 0;
+  padding-top:80px;
   text-align: center;
   background-size: cover;
-  height: 100%; 
-  position: initial;
-}
-html { overflow-y: scroll; overflow-x:hidden; }
 
-.form-title{
-  
-  color: #fff;
-  transition: all 0.5s ease-in-out;
 }
-.form-title h1{
-  font-size: 32px;
-  line-height: 10px;
+html { 
+  overflow-y: scroll; 
+  overflow-x:hidden; 
 }
 
-form{
-  margin-top: 50px;
-  transition: all 0.5s ease-in-out;
-  position: absolute;
-  left: 30%;
-}
-.form-control{
-  width: 600px;
-  background: transparent;
-  border: none;
-  outline: none;
-  border-bottom: 1px solid gray;
-  color: #fff;
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-input{
-  height: 45px;
-}
-
-form .submit{
-  border-color: transparent;
-  color: #fff;
-  font-size: 20px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  height: 50px;
-  margin-top: 20px;
-}
-
-form .submit: hover{
-  cursor: pointer;
-}
 
 .bookshelf-book {
   list-style-type:none;
   float:left;
-  margin:10px;  
-  
-  height:300px;
+  margin:6px;  
+  height:100%;
   -webkit-box-shadow: 0px 0px 12px rgba(0,0,0,0.5);
   -moz-box-shadow:    0px 0px 12px rgba(0,0,0,0.5);
   box-shadow:         0px 0px 12px rgba(0,0,0,0.5);
@@ -74,7 +31,8 @@ form .submit: hover{
   height:100%;
 }
 
-/*Bookshelf Bookelement ribbon*/
+/*==============================================Bookshelf Bookelement ribbon===========================================*/
+
 .ribbon-new {
   width: 100px;
   height: 100px;
@@ -109,7 +67,8 @@ form .submit: hover{
   box-shadow:         0px 0px 3px rgba(0,0,0,0.3);
 }
 
-/*Bookshelf Bookelement caption*/
+/*============================================Bookshelf Bookelement caption============================================*/
+
 .bookshelf-caption {
   background-color:#000;
   color:#fff;
@@ -146,125 +105,175 @@ form .submit: hover{
   }
 }
 
-/* Navigation Bar*/
+/* ============================================Navigation Bar===============================================*/
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 10vh;
+    background-color: #562862;
+    font-family: "Poppins", sans-serif;
+    z-index: 1;
+}
+
+.logo {
+    color: rgb(226, 226, 226);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+}
+  
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    color: rgb(226, 226, 226);
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.burger {
+    display: none;
+}
+  
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: rgb(226, 226, 226);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 1024px) {
+    .nav-links {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    
+    .nav-links {
+        position: fixed;
+        right: 0px;
+        height: 92vh;
+        top: 12vh;
+        background-color: #562862;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 31%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    
+    .nav-links li {
+        opacity: 0;
+    }
+    
+    .burger {
+        display: block;
+        cursor: pointer;
+    }
+}
+
+.nav-active {
+        transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+
+/*================================================ Form Styling =====================================================*/
+ 
+
+.form-title{
+  
+  color: #fff;
+  transition: all 0.5s ease-in-out;
+}
+.form-title h1{
+  font-size: 32px;
+  line-height: 50px;
+}
+
+form{
+  margin-top: 50px;
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  left: 30%;
+}
+
+.form-control{
+  width: 600px;
+  background: transparent;
   border: none;
   outline: none;
-  font-family: monospace;
-  text-transform: uppercase;
-  font-weight: bold;
-  text-decoration: none;
-  box-sizing: border-box;
-}
- 
-
-ul, ol { list-style: none; }
- 
-header {
-  width: 100vw;
-  height: 20vh;
-  display: flex;
-  position: relative;
-  align-items: center;
-  flex-direction: column;
-}
- 
-header:before {
-  content: "";
-  width: 100%;
-  z-index: -1;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  animation: grow 60s linear .5s infinite;
-}
- 
-header nav {
-  width: 50%;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
-}
- 
-header nav .logo { 
-  color: #fff; 
-  font-size: 30px; 
-  padding: 20px 20px 10px 20px;
-   
-}
- 
-header nav .logo a { 
-    color: #fff; 
-}
- 
-header nav ul {
-  display: flex;
-  flex-wrap: wrap;
-}
- 
-header nav li a {
+  border-bottom: 1px solid gray;
   color: #fff;
-  display: block;
-  position: relative;
-  padding: 20px 20px 10px;
-  font-size: 15px;
-   
+  font-size: 18px;
 }
- 
-header nav li a:before, header nav li a:after {
-  content: "";
-  bottom: 0;
-  width: 0px;
-  height: 2px;
-  display: block;
-  position: absolute;
-  background-color: #fff;
-  -webkit-transition: all 0.3s ease-in-out;
-          transition: all 0.3s ease-in-out;  
+
+input{
+  height: 45px;
 }
- 
-header nav li a:before { right: 50%; }
-header nav li a:after { left: 50%; }
- 
-header nav li a:hover:before , header nav li a:hover:after {
-  width: 50%;
+
+form .submit{
+  border-color: transparent;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  height: 50px;
+  margin-top: 20px;
 }
- 
-@keyframes grow {
-  0% { transform: scale(1) rotate(0deg); }
-  50% { transform: scale(1.6) rotate(10deg);}
-}
- 
-@-webkit-keyframes grow {
-  0% { transform: scale(1) rotate(0deg); }
-  50% { transform: scale(1.6) rotate(10deg);}
-}
- 
-@media only screen and (max-width: 290px) {
-  header nav ul { 
-    width: 100%; 
-    text-align: center;
-    flex-direction: column; 
-  }
+
+form .submit: hover{
+  cursor: pointer;
 }
 
 
 
-/* Scrollbar Fix */
 
-body::-webkit-scrollbar {
-  width: 1em;
-}
- 
-body::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-}
- 
-body::-webkit-scrollbar-thumb {
-  background-color: #230007;
-  outline: 2px solid slategrey;
-}
+
+
+
+
