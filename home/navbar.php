@@ -7,7 +7,7 @@
 <body>
 <nav>
 	 <div class="logo">
-        <h4>E-Library</h4>
+       <h4><a href="home.php" style="text-decoration:none; outline:none; border:0; color: white;">E-Library</a></h4>
     </div>
     <ul class="nav-links">
         <li><a href="home.php">Home</a></li>
