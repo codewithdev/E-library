@@ -1,265 +1,214 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
-
-body{
-  background-image: url(../assets/images/wall.jpg);
-  margin:0;
-  padding-top:80px;
-  text-align: center;
-  background-size: cover;
-
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+* {
+  margin: 0;
+  padding: 0;
 }
-html { 
-  overflow-y: scroll; 
-  overflow-x:hidden; 
+html {
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
   width: 1em;
 }
- 
+
 body::-webkit-scrollbar-track {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
- 
+
 body::-webkit-scrollbar-thumb {
-  background-color: #3C0000;
+  background-color: #3c0000;
   outline: 1px solid slategrey;
 }
 
 .bookshelf-book {
-  list-style-type:none;
-  float:left;
-  margin:6px;  
-  height:100%;
-  -webkit-box-shadow: 0px 0px 12px rgba(0,0,0,0.5);
-  -moz-box-shadow:    0px 0px 12px rgba(0,0,0,0.5);
-  box-shadow:         0px 0px 12px rgba(0,0,0,0.5);
-  position:relative;
-  overflow:hidden;
+  list-style-type: none;
+  float: left;
+  margin: 6px;
+  height: 100%;
+  -webkit-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
   -webkit-animation: trans 2s;
   animation: trans 2s;
 }
 .bookshelf-book img {
-  height:100%;
+  height: 100%;
 }
 
-/*==============================================Bookshelf Bookelement ribbon===========================================*/
-
-.ribbon-new {
-  width: 100px;
-  height: 100px;
-  overflow: hidden;
+.overlay {
   position: absolute;
-}
-.ribbon-new > div {
-  font: bold 15px sans-serif;
-  color: #333;
-  text-align: center;
-  text-shadow: rgba(255,255,255,0.5) 0px 1px 0px;
-  -webkit-transform: rotate(-45deg);
-  -moz-transform:    rotate(-45deg);
-  -ms-transform:     rotate(-45deg);
-  -o-transform:      rotate(-45deg);
-  position: relative;
-  padding: 7px 0;
-  left: -30px;
-  top: 15px;
-  width: 120px;
-  background-color: #66BA59;
-  background: #c9de96;
-  background: -webkit-linear-gradient(top,  #c9de96 0%,#66ba59 100%);
-  background:        -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c9de96), color-stop(100%,#66ba59));
-  background:    -moz-linear-gradient(top,  #c9de96 0%, #66ba59 100%);
-  background:      -o-linear-gradient(top,  #c9de96 0%,#66ba59 100%);
-  background:     -ms-linear-gradient(top,  #c9de96 0%,#66ba59 100%);
-  background:         linear-gradient(to bottom,  #c9de96 0%,#66ba59 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c9de96', endColorstr='#66ba59',GradientType=0 );
-  -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
-  -moz-box-shadow:    0px 0px 3px rgba(0,0,0,0.3);
-  box-shadow:         0px 0px 3px rgba(0,0,0,0.3);
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background-color: #3c0000;
+  overflow: hidden;
+  width: 100%;
+  height:0;
+  transition: .5s ease;
 }
 
-/*============================================Bookshelf Bookelement caption============================================*/
-
-.bookshelf-caption {
-  background-color:#000;
-  color:#fff;
-  opacity: 0.8;
-  filter: alpha(opacity=80);
-  position:absolute;
-  height:300px;
-  padding:10px;
-}
-.bottom-to-top {
-  top:100%;
- }
-.bookshelf-book:hover .bottom-to-top {
-  top:0%;
-  transition: all 0.5s ease;
-  -webkit-transition: all 0.5 ease;  
+.bookshelf-book:hover .overlay {
+  bottom: 0;
+  height: 100%;
+  opacity: 0.7;
 }
 
-/*Animation*/
-@-webkit-keyframes trans {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes trans {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.text {
+  white-space: nowrap; 
+  color: white;
+  font-size: 30px;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
 }
 
-/* ============================================Navigation Bar===============================================*/
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+
+/*========================Navigation Bar ======================*/
+
+*{
+  margin:0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
 nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    min-height: 10vh;
-    background-color: #3C0000;
-    font-family: "Poppins", sans-serif;
-    z-index: 1;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background-color: #3c0000;
+  font-family: "Poppins", sans-serif;
+  z-index: 1;
 }
 
 .logo {
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    font-size: 20px;
-    border: 0;
-    outline: none;
-    text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 20px;
+  border: 0;
+  outline: none;
+  text-decoration: none;
 }
-  
+
 .nav-links {
-    display: flex;
-    justify-content: space-around;
-    width: 30%;
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
 }
 
 .nav-links li {
-    list-style: none;
+  list-style: none;
 }
 
 .nav-links a {
-    color: rgb(226, 226, 226);
-    text-decoration: none;
-    letter-spacing: 2px;
-    font-weight: bold;
-    font-size: 19px;
+  color: rgb(226, 226, 226);
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-size: 19px;
 }
 
 .burger {
-    display: none;
+  display: none;
 }
-  
+
 .burger div {
-    width: 25px;
-    height: 3px;
-    background-color: rgb(226, 226, 226);
-    margin: 5px;
-    transition: all 0.3s ease;
+  width: 25px;
+  height: 3px;
+  background-color: rgb(226, 226, 226);
+  margin: 5px;
+  transition: all 0.3s ease;
 }
-
-
 
 @media screen and (max-width: 1024px) {
-    .nav-links {
-        width: 60%;
-    }
+  .nav-links {
+    width: 60%;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    
-    .nav-links {
-        position: fixed;
-        right: 0px;
-        height: 92vh;
-        top: 10vh;
-        background-color: #3C0000;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 31%;
-        transform: translateX(100%);
-        transition: transform 0.5s ease-in;
-    }
-    
-    .nav-links li {
-        opacity: 0;
-    }
-    
-    .burger {
-        display: block;
-        cursor: pointer;
-    }
+  .nav-links {
+    position: fixed;
+    right: 0px;
+    height: 92vh;
+    top: 10vh;
+    background-color: #3c0000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 31%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+
+  .nav-links li {
+    opacity: 0;
+  }
+
+  .burger {
+    display: block;
+    cursor: pointer;
+  }
 }
 
 .nav-active {
-        transform: translateX(0%);
+  transform: translateX(0%);
 }
 
 @keyframes navLinkFade {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .toggle .line1 {
-    transform: rotate(-45deg) translate(-5px, 6px);
+  transform: rotate(-45deg) translate(-5px, 6px);
 }
 
 .toggle .line2 {
-    opacity: 0;
+  opacity: 0;
 }
 
 .toggle .line3 {
-    transform: rotate(45deg) translate(-5px, -6px);
+  transform: rotate(45deg) translate(-5px, -6px);
 }
 
 
 /*================================================ Form Styling =====================================================*/
- 
 
-.form-title{
-  
+.form-title {
   color: #fff;
   transition: all 0.5s ease-in-out;
 }
-.form-title h1{
+.form-title h1 {
   font-size: 32px;
   line-height: 50px;
 }
 
-form{
+form {
   margin-top: 50px;
   transition: all 0.5s ease-in-out;
   position: absolute;
   left: 30%;
 }
 
-.form-control{
+.form-control {
   width: 600px;
   background: transparent;
   border: none;
@@ -269,11 +218,11 @@ form{
   font-size: 18px;
 }
 
-input{
+input {
   height: 45px;
 }
 
-form .submit{
+form .submit {
   border-color: transparent;
   color: #fff;
   font-size: 20px;
@@ -283,14 +232,7 @@ form .submit{
   margin-top: 20px;
 }
 
-form .submit: hover{
+form.submit: hover {
   cursor: pointer;
 }
-
-
-
-
-
-
-
 
