@@ -5,16 +5,20 @@ Preparatory Project based on HTML, CSS and PHP
 ## Functionalities
  - Adding Books in the stack.
  - Explore and View All books in the Stacks
+ - Validate If the Book is already Present
+ - Book Details
+ - Edit The Book Details
+ - Remove the Book from the Stack
 
 
 ## Databse Schema
 
-| isbn  |      title     |  author | image  |description  | url
-|----------|:-------------:|------:|:----------|:-------------:|------:|
-| col 1 is |--------  | --- |----------| ---------|----------|
-| col 2 is |--------  | --- |----------| ---------|----------|
-| col 2 is |--------  | --- |----------| ---------|----------|
-| col 3 is |--------  |-----|----------| ---------|----------|
+book_id(int)(AI) | isbn(big_int)  |      title(VarChar)     |  author(Char) | image(VarChar)  |description(LongText)  | url(VarChar)
+|----------|:-----------|:-------------:|------:|:----------|:-------------:|:-----------------:|
+| row 1 is |--------  | --- |----------| ---------|----------|
+| row 2 is |--------  | --- |----------| ---------|----------|
+| row 2 is |--------  | --- |----------| ---------|----------|
+| row 3 is |--------  |-----|----------| ---------|----------|
  
 ### Tools & Technology Used
  - Basic Web Development tools and frameworks, Bootstrap, HTML5, CSS3
