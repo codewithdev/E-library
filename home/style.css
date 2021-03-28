@@ -2,7 +2,10 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "Dancing Script" sans-serif;
 }
+
+
 html {
   overflow-y: scroll;
   overflow-x: hidden;
@@ -21,8 +24,10 @@ body::-webkit-scrollbar-thumb {
   outline: 1px solid slategrey;
 }
 
-.bookshelf-book {
+.bookshelf-book{
   list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
   float: left;
   margin: 6px;
   height: 100%;
@@ -33,9 +38,19 @@ body::-webkit-scrollbar-thumb {
   overflow: hidden;
   -webkit-animation: trans 2s;
   animation: trans 2s;
+
 }
 .bookshelf-book img {
   height: 100%;
+}
+
+.bookshelf .bookshelf-book{
+background: #1D212B;
+position: relative;
+width: 250px;
+height: 400px;
+margin: 20px;
+border-radius: 10px;
 }
 
 .overlay {
@@ -43,7 +58,7 @@ body::-webkit-scrollbar-thumb {
   bottom: 100%;
   left: 0;
   right: 0;
-  background-color: #3c0000;
+  background-color: #FAA107 ;
   overflow: hidden;
   width: 100%;
   height:0;
@@ -56,7 +71,29 @@ body::-webkit-scrollbar-thumb {
   opacity: 0.7;
 }
 
-.text {
+.edit-btn{
+  white-space: nowrap; 
+  color: white;
+  font-size: 30px;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+.open-btn{
+  white-space: nowrap; 
+  color: white;
+  font-size: 30px;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+.del-btn{
   white-space: nowrap; 
   color: white;
   font-size: 30px;
@@ -68,7 +105,190 @@ body::-webkit-scrollbar-thumb {
   -ms-transform: translate(-50%, -50%);
 }
 
+/* ====Styling Popup==== */
 
+
+.bookshelf .popup-view{
+  z-index: 2;
+  background: rgba(255,255,255,0.5);
+  position: fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  display:flex;
+  justify-content: center;
+  align-item: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+}
+
+.bookshelf .popup-view.active{
+  opacity: 1;
+  visibility: visible;
+}
+
+.bookshelf .popup-card{
+  position: relative;
+  display: flex;
+  width: 800px;
+  height: 600px;
+  margin: 20px;
+}
+
+.bookshelf .popup-card .book-img{
+  z-index: 2;
+  background: #723c70;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 90%;
+  transform: translateY(25px);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+
+}
+
+.bookshelf .popup-card .book-img img{
+  z-index: 2;
+  position: relative;
+  width: 80%;
+  left:0;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.bookshelf .popup-card .info{
+  z-index: 2;
+  background: #5c4d7d;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  height:100%;
+  box-sizing: border-box;
+  padding: 40px;
+  border-radius: 10px;
+}
+.bookshelf .popup-card .close-btn{
+  color: #eae2b7;
+  z-index: 3;
+  position: absolute;
+  right:0;
+  font-size: 20px;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.bookshelf .popup-card .info h2{
+  color: #fcbf49;
+  font-size: 40px;
+  line-height:40px;
+  margin: 15px;
+}
+.bookshelf .popup-card .info h2 span{
+  color: #fff;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 3px; 
+}
+
+.bookshelf .popup-card .info p{
+  color: #fff;
+  font-size: 24px;
+  margin:10px;
+}
+
+.bookshelf .popup-card .info .author{
+  color: #fff;
+    font-size: 45px;
+    font-weight: 300;
+    margin: 10px; 
+}
+
+.bookshelf .popup-card .info .next-btn{
+   color:#fff;
+  background: #4d194d;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: right;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 10px auto;
+  padding: 10px 50px;
+  border-radius: 20px;
+}
+.bookshelf .popup-card .info .link-btn{
+   color:#000;
+  background: #f8f8f8;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: right;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 10px auto;
+  padding: 10px 50px;
+  border-radius: 20px;
+}
+
+/* Responsive Popup */
+
+@media (max-width: 900px){
+  .bookshelf .popup-card{
+    flex-direction: column;
+    width: 550px;
+    height: auto;
+  }
+  .bookshelf .popup-card .book-img{
+    z-index: 3;
+    width: 100%;
+    height: 200px;
+    transform: translateY(0);
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+
+  .bookshelf .popup-card .book-img img{
+    z-index: 1;
+    left: initial;
+    max-width: 40%;
+  }
+  .bookshelf .popup-card .info{
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  .bookshelf .popup-card .info h2{
+    margin: 20px 5px 5px 5px;
+    font-size: 25px;
+  }
+  .bookshelf .popup-card .info span{
+    font-size:10px;
+  }
+  .bookshelf .popup-card .info p{
+    margin: 5px;
+    font-size: 13px; 
+  }
+  .bookshelf .popup-card .info .author{
+    margin: 5px;
+    font-size: 30px;
+  }
+  .bookshelf .popup-card .info .link-btn{
+    margin: 5px auto;
+    padding: 5px 40px;
+    font-size: 14px;
+  }
+    .bookshelf .popup-card .info .next-btn{
+      font-size: 14px;
+    }
+  .bookshelf .popup-card .close-btn{
+    z-index:4;
+
+  }  
+}
 
 /*========================Navigation Bar ======================*/
 
