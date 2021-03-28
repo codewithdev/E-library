@@ -5,6 +5,10 @@ Preparatory Project based on HTML, CSS and PHP
 ## Functionalities
  - Adding Books in the stack.
  - Explore and View All books in the Stacks
+ - Validate If the Book is already Present
+ - Book Details
+ - Edit The Book Details
+ - Remove the Book from the Stack
 
 
 ## Databse Schema
