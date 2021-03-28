@@ -41,11 +41,11 @@
       <img src="<?php echo $imageurl;?>">
        <div class="overlay">
       
-         <a href="#" class="edit-btn"><i style="padding-right: 140px;" class="fas fa-edit"></i></a>
+         <a href="#" class="edit-btn"><i style="padding-right: 140px;" class="fas fa-edit" data-toggle="tooltip" title="Edit This Book"></i></a>
         
-         <a class="open-btn"><i style="padding-right:60px;" class="fas fa-external-link-alt"></i></a>
+         <a class="open-btn"><i style="padding-right:60px;" class="fas fa-external-link-alt" data-toggle="tooltip" title="View Book"></i></a>
 
-         <a href="#" class="del-btn"><i style="margin-left:15px;" class="fas fa-trash"></i></a>
+         <a href="#" class="del-btn"><i style="margin-left:15px;" class="fas fa-trash" data-toggle="tooltip" title="Delete this Book"></i></a>
     </div>
 </li>
 
@@ -60,7 +60,7 @@
   <div class="info">
     <h2><?php echo addslashes($bookname);?><br><span><?php echo $bookauthor ?></span></h2>
     <p><?php echo $desc?></p>
-    <a href="<?php echo $bookurl;?>" class= "link-btn">Read More</a>
+    <a href="<?php echo $bookurl;?>"class= "link-btn" target= "_blank">Read More</a>
     <a href="#" class="next-btn">Next</a>
 
   </div>
