@@ -12,17 +12,18 @@
     <title>E-Library Homepage</title>
 
     <!-- Vendors -->
+    <script type="text/javascript" src="../assets/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel= "stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    <link rel="stylesheet" href="style.css"/>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
   </head>
 
 <body>
-
 <?php 
- $res= mysqli_query($db,"SELECT `book_id`, `isbn`, `title`, `author`, `image`, `description`, `url` FROM `books`;");
+
+$res= mysqli_query($db,"SELECT `book_id`, `isbn`, `title`, `author`, `image`, `description`, `url` FROM `books`;");
 
   while($row= mysqli_fetch_assoc($res)){
        $bid= $row['book_id'];
@@ -45,10 +46,20 @@
         
          <a class="open-btn"><i style="padding-right:60px;" class="fas fa-external-link-alt" data-toggle="tooltip" title="View Book"></i></a>
 
-         <a href="#" class="del-btn"><i style="margin-left:15px;" class="fas fa-trash" data-toggle="tooltip" title="Delete this Book"></i></a>
+         <a class="del-btn"><i style="margin-left:15px;" class="fas fa-trash" data-toggle="tooltip" title="Delete this Book"></i></a>
     </div>
+
+    <div class="modal">
+                <div class="modalContent">
+                        <span class="close">×</span>
+                          <p>Are you sure you want to delete this book?</p>
+                <button class="btn btn-primary" onclick="hideModal()">Delete</button>
+                <button class="btn btn-danger" onclick="hideModal()">Cancel</button>
+                </div>
+             </div>  
 </li>
 
+<!-- Create a Popup for displaying Book Details -->
 
 <div class="popup-view">
   <div class="popup-card">
@@ -60,14 +71,22 @@
   <div class="info">
     <h2><?php echo addslashes($bookname);?><br><span><?php echo $bookauthor ?></span></h2>
     <p><?php echo $desc?></p>
-    <a href="<?php echo $bookurl;?>"class= "link-btn" target= "_blank">Read More</a>
+    <a href="<?php echo $bookurl;?>" class= "link-btn" target= "_blank">Read More</a>
     <a href="#" class="next-btn">Next</a>
-
   </div>
   </div>
-</div>
-</ul>
+</div> 
 
+<!--Delete Modal Popup-->
+<div class="modal">
+                <div class="modalContent">
+                        <span class="close">×</span>
+                          <p>Are you sure you want to delete this book?</p>
+                <button class="btn btn-primary" onclick="hideModal()">Delete</button>
+                <button class="btn btn-danger" onclick="hideModal()">Cancel</button>
+                </div>
+             </div>  
+   </ul>
 <?php
 }
 ?> 
@@ -81,10 +100,10 @@
    background-size: cover;
    background-attachment: fixed;
   }
+
 </style>
 
 <script type="text/javascript">
-  
   var popupViews= document.querySelectorAll('.popup-view');
   var popupBtn= document.querySelectorAll('.open-btn');
   var closeButton= document.querySelectorAll('.close-btn');
@@ -99,7 +118,7 @@
     });
   });
 
-  //JavaScript for Close Button
+//JavaScript for Close Button
 
   closeButton.forEach((closeBtn)=>{
    closeBtn.addEventListener("click", ()=>{
@@ -109,10 +128,25 @@
    });
   });
 
+var modal = document.querySelector(".modal");
+   var btn = document.querySelector(".del-btn");
+   var span = document.querySelector(".close");
+   btn.addEventListener("click", () => {
+      modal.style.display = "block";
+   });
 
+   span.addEventListener("click", () => {
+      hideModal();
+   });
+   function hideModal() {
+      modal.style.display = "none";
+   }
+   window.onclick = function(event) {
+      if (event.target == modal) {
+         hideModal();
+      }
+   };
 
 </script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../assets/js/script.js"></script>
 </body>
 </html>

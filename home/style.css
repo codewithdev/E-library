@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -129,6 +130,11 @@ border-radius: 10px;
   visibility: visible;
 }
 
+.bookshelf .delModal.active{
+  opacity: 1;
+  visibility: visible;
+}
+
 .bookshelf .popup-card{
   position: relative;
   display: flex;
@@ -245,8 +251,9 @@ border-radius: 10px;
     width: 100%;
     height: 200px;
     transform: translateY(0);
-    border-bottom-left-radius: 10px;
+    border-bottom-left-radius: 0px;
     border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
   }
 
   .bookshelf .popup-card .book-img img{
@@ -409,6 +416,41 @@ nav {
   transform: rotate(45deg) translate(-5px, -6px);
 }
 
+
+/*====================Delete Modal popup Styling=========================*/
+
+.bookshelf.bookshelf-book.modal {
+      text-align: center;
+      display: none;
+      position: fixed;
+      z-index: 1;
+      padding-top: 100px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+   }
+   .bookshelf .bookshelf-book .modalContent {
+      font-size: 20px;
+      font-weight: bold;
+      background-color: #fefefe;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+   }
+   .bookshelf .bookshelf-book .close {
+      color: rgb(255, 65, 65);
+      float: right;
+      font-size: 40px;
+      font-weight: bold;
+   }
+   .bookshelf .bookshelf-book .close:hover, .close:focus {
+      color: #ff1010;
+      cursor: pointer;
+   }
+  
 
 /*================================================ Form Styling =====================================================*/
 

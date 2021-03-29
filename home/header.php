@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="https://fonts.googleapis.com/css?family=Psoppins%26display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -18,8 +17,10 @@
         <div class="line2"></div>
         <div class="line3"></div>
     </div>
+
 </nav>
 
-<script src="../assets/js/script.js"></script>
+ <script src="../assets/js/script.js"></script>
+
 </body>
 </html>
