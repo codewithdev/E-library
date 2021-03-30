@@ -1,7 +1,7 @@
 <?php
 include "connection.inc.php";
-
 ?>
+<?php include "header.php"; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,23 +16,65 @@ include "connection.inc.php";
   </head>
   <body>
     
-<?php include "header.php"; ?>
 
 <!-- Form Intiation-->
 
-<div class="form-title">
-<h1>Contribute to the Library</h1>
-</div>    
+<div class="container">
+  <h2>Add a New Book</h2>
+ <form id="add-form" method="POST" action="">
+    <div class="row">
+      <div class="col-25">
+        <label for="isbn">Enter ISBN </label>
+      </div>
+      <div class="col-75">
+         <input name= "isbn" type="text" class="form-control" placeholder="Enter ISBN" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="title">Enter Title of the Book</label>
+      </div>
+      <div class="col-75">
+         <input name= "title" type="text" class="form-control" placeholder="Enter Book Title" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="country">Author Name</label>
+      </div>
+      <div class="col-75">
+       <input name= "author" type="text" class="form-control" placeholder="Enter Author Name" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="subject">Book Cover Image</label>
+      </div>
+      <div class="col-75">
+       <input name= "image" type="text" class="form-control" placeholder="Enter Image URL" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="subject">Book Description</label>
+      </div>
+      <div class="col-75">
+     <textarea name= "description" class="form-control" placeholder="Enter description of the book" row=4></textarea>
+      </div>
+    </div>
 
-<div class="add-form">
-  <form id="add-form" method="POST" action="">
-  <input name= "isbn" type="text" class="form-control" placeholder="Enter ISBN" required><br>
-  <input name= "title" type="text" class="form-control" placeholder="Enter Book Title" required><br>
-  <input name= "author" type="text" class="form-control" placeholder="Author Name" required><br>
-  <input name= "image" type="text" class="form-control" placeholder="Enter Image URL" id= "upload-item"><br>
-  <textarea name= "description" class="form-control" placeholder="Enter description of the book" row=4></textarea><br>
-  <input name= "url" type="text" class="form-control" placeholder="Enter book URL"><br>
-  <button type="submit" class="btn btn-success btn-flat" name="submit">Submit</button>
+     <div class="row">
+      <div class="col-25">
+        <label for="subject">Book Description</label>
+      </div>
+      <div class="col-75">
+     <input name= "url" type="text" class="form-control" placeholder="Enter book URL">
+      </div>
+    </div>
+
+    <div class="text-center">
+      <button class="btn btn-primary">Submit </button>
+    </div>
   </form>
 </div>
 
@@ -52,3 +94,4 @@ include "connection.inc.php";
    }
 ?>      
 </body>
+</html>
