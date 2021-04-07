@@ -23,14 +23,12 @@ function lazyLoad() {
 			// add a class to remove the blur filter to smoothly transition the image change
 			card_image.className = card_image.className + ' is-loaded';
 		});
-		
 	});
-	
 }
 
 //Navigation Bar JavaScript
 
-   const navSlide=()=> {
+    const navSlide=()=>{
     const burger= document.querySelector('.burger');
     const nav= document.querySelector('.nav-links');
     const navLinks= document.querySelectorAll('.nav-links li');
@@ -54,3 +52,9 @@ function lazyLoad() {
 }
 navSlide();
 
+
+/*footer*/
+
+const footerSpan = document.querySelector(".footer-span");
+
+footerSpan.innerHTML = `${(new Date().getFullYear())}`;

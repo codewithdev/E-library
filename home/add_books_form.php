@@ -48,7 +48,7 @@ include "connection.inc.php";
     </div>
     <div class="row">
       <div class="col-25">
-        <label for="subject">Book Cover Image</label>
+        <label for="image">Book Cover Image</label>
       </div>
       <div class="col-75">
        <input name= "image" type="text" class="form-control" placeholder="Enter Image URL" required>
@@ -56,7 +56,7 @@ include "connection.inc.php";
     </div>
     <div class="row">
       <div class="col-25">
-        <label for="subject">Book Description</label>
+        <label for="description">Book Description</label>
       </div>
       <div class="col-75">
      <textarea name= "description" class="form-control" placeholder="Enter description of the book" row=4></textarea>
@@ -65,7 +65,7 @@ include "connection.inc.php";
 
      <div class="row">
       <div class="col-25">
-        <label for="subject">Book Description</label>
+        <label for="url">Book URL</label>
       </div>
       <div class="col-75">
      <input name= "url" type="text" class="form-control" placeholder="Enter book URL">
@@ -73,7 +73,7 @@ include "connection.inc.php";
     </div>
 
     <div class="text-center">
-      <button class="btn btn-primary">Submit </button>
+      <button class="btn btn-primary" name= "submit">Submit </button>
     </div>
   </form>
 </div>
@@ -84,12 +84,13 @@ include "connection.inc.php";
 <?php
   if(isset($_POST['submit']))
   {
-     mysqli_query($db,"INSERT INTO `books`(`isbn`, `title`, `author`, `image`, `description`, `url`) VALUES ('$_POST[isbn]','$_POST[title]','$_POST[author]','$_POST[image]','$_POST[description]','$_POST[url]');");
+     mysqli_query($db,"INSERT INTO `books`(`isbn`, `title`, `author`, `image`,`description`, `url`) VALUES ('$_POST[isbn]','$_POST[title]','$_POST[author]','$_POST[image]','$_POST[description]','$_POST[url]');");
   ?>
   <script type="text/javascript">
     alert("Book Added Successfully!");
     window.location.href="home.php";
   </script>
+
   <?php 
    }
 ?>      
