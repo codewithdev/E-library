@@ -14,7 +14,7 @@ Preparatory Project based on HTML, CSS and PHP
 ## Databse Schema
 
 book_id(int)(AI) | isbn(big_int)  |      title(VarChar)     |  author(Char) | image(VarChar)  |description(LongText)  | url(VarChar)
-|----------|:-----------|:-------------:|------:|:----------|:-------------:|:-----------------:|
+|------|:-------|:------:|------:|:---|:-----:|:---:|
 | row 1 is |--------  | --- |----------| ---------|----------|
 | row 2 is |--------  | --- |----------| ---------|----------|
 | row 2 is |--------  | --- |----------| ---------|----------|
