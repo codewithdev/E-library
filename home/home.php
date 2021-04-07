@@ -89,6 +89,7 @@ if(mysqli_num_rows($res)>0){
 }
 }
 }
+
 /*If there are not any books Found in the Library*/
 else{
    echo"<h1 style='color: white;font-size:58px; font-family: Poppins; font-weight: 600;' class=m-2>U!Oh Nothing Found Here!</h1>
