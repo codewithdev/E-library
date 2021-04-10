@@ -11,15 +11,11 @@ Preparatory Project based on HTML, CSS and PHP
  - Remove the Book from the Stack
 
 
-## Databse Schema
+## Database Schema
 
-book_id(int)(AI) | isbn(big_int)  |      title(VarChar)     |  author(Char) | image(VarChar)  |description(LongText)  | url(VarChar)
-|------|:-------|:------:|------:|:---|:-----:|:---:|
-| row 1 is |--------  | --- |----------| ---------|----------|
-| row 2 is |--------  | --- |----------| ---------|----------|
-| row 2 is |--------  | --- |----------| ---------|----------|
-| row 3 is |--------  |-----|----------| ---------|----------|
- 
+### [Open Link](https://dbdiagram.io/embed/6071a520ecb54e10c33fa13d)
+
+
 ### Tools & Technology Used
  - Basic Web Development tools and frameworks, Bootstrap, HTML5, CSS3
  - MySQL 5.0.5 or later
