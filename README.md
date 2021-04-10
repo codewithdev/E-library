@@ -1,6 +1,9 @@
 # E-library (Ongoing)
 Preparatory Project based on HTML, CSS and PHP
 
+# Motivation
+In digital world books plays a vital role whether for a Entrepreneur or an Engineer there are lots of thing we learn from books. To manage the books stack which books you have read so far, which will be read, what are other good books that could make an impact on us, all these can be available on Open Source E-library. Books are forever friend for anyone. It should be manage in a certain way.
+
 
 ## Functionalities
  - Adding Books in the stack.
