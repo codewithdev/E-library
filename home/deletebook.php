@@ -18,7 +18,6 @@ else{
 	</script>
 }
 <?php
-
 mysqli_close($db);
 ?>
 

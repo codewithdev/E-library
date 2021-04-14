@@ -48,7 +48,6 @@ function lazyLoad() {
     });
     burger.classList.toggle('toggle');
 });
-
 }
 navSlide();
 

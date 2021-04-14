@@ -2,6 +2,7 @@
 <?php
      include "connection.inc.php";
      include "header.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +49,6 @@ if(mysqli_num_rows($res)>0){
 
 
 <!--=============================== Edit Popup Modal=============================================-->
-<form method="POST">
 <div id="editModal<?php echo $row['book_id']?>" class="modal fade" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -58,42 +58,43 @@ if(mysqli_num_rows($res)>0){
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+      <form action="updatebook.php" method="POST">
+      <input type="hidden" name="id" value="<?php echo $row['book_id'];?>">
       <div class="modal-body">
-        <form>
+        
           <div class="form-group">
             <label for="isbn" class="col-form-label">ISBN</label>
-            <input type="text" class="form-control" id="isbn" value="<?php echo $row['isbn'];?>">
+            <input type="text" class="form-control" name="isbn" value="<?php echo $row['isbn'];?>">
           </div>
           <div class="form-group">
             <label for="title" class="col-form-label">Enter Book Title</label>
-            <input type="text" class="form-control" id="title" value="<?php echo $row['title'];?>">
+            <input type="text" class="form-control" name="title" value="<?php echo $row['title'];?>">
           </div>
             <div class="form-group">
             <label for="author" class="col-form-label">Enter Author Name</label>
-            <input type="text" class="form-control" id="author" value="<?php echo $row['author'];?>">
+            <input type="text" class="form-control" name="author" value="<?php echo $row['author'];?>">
           </div>
             <div class="form-group">
             <label for="image" class="col-form-label">Image URL</label>
-            <input type="text" class="form-control" id="image" value="<?php echo $row['image'];?>">
+            <input type="text" class="form-control" name="image" value="<?php echo $row['image'];?>">
           </div>
             <div class="form-group">
             <label for="description" class="col-form-label">Enter Book Description</label>
-            <textarea class="form-control" id="description" value="<?php echo $row['description'];?>"></textarea>
+            <textarea class="form-control" name="description" value="<?php echo $row['description'];?>"></textarea>
           </div>
             <div class="form-group">
             <label for="url" class="col-form-label">Book URL</label>
-            <input type="text" class="form-control" id="url" value="<?php echo $row['url'];?>"></textarea>
-          </div>
-        </form>
+            <input type="text" class="form-control" name="url" value="<?php echo $row['url'];?>">
+           </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <a href="updatebook.php?id=<?php echo $row['book_id']?>"><button type="button" class="btn btn-primary" name="save">Save Changes</button></a>
+        <button type="submit" class="btn btn-primary" name="save">Save Changes</button>
       </div>
+    </form>
     </div>
   </div>
 </div>
-</form>
 <!-- ================================Delete Popup Modal =========================================--> 
 
 <div id="myModal<?php echo $row['book_id']?>" class="modal fade" role="dialog" tabindex="-1">
