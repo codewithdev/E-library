@@ -2,9 +2,7 @@
 <?php
      include "connection.inc.php";
      include "header.php";
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -104,14 +102,17 @@ if(mysqli_num_rows($res)>0){
                 <h5 class="modal-title">Confirmation</h5>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>                
             </div>
+            <form action="deletebook.php" method="POST" >
+            <input type="hidden" name="id" value="<?php echo $row['book_id'];?>">
             <div class="modal-body">
                 <p>Do you really want to delete <strong><?php echo $row['title']?>?</strong></p>
                 <p class="text-secondary"><small></small></p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <a href="deletebook.php?id=<?php echo $row['book_id']?>"><button type="button" class="btn btn-primary">Delete</button></a>
+                <button type="submit" class="btn btn-primary" name= "delete">Delete</button>
             </div>
+          </form>
         </div>
     </div>
 </div>

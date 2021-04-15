@@ -7,7 +7,6 @@
   font-family: "Dancing Script" sans-serif;
 }
 
-
 html {
   overflow-x: hidden;
 }
@@ -309,9 +308,8 @@ border-radius: 10px;
   }  
 }
 
-
-
 /*========================Navigation Bar ======================*/
+
 
 *{
   margin:0px;
@@ -331,7 +329,6 @@ nav {
   font-family: "Poppins", sans-serif;
   z-index: 1;
 }
-
 .logo {
   color: white;
   text-transform: uppercase;
@@ -429,7 +426,6 @@ nav {
 .toggle .line3 {
   transform: rotate(45deg) translate(-5px, -6px);
 }
-
 
 
 
