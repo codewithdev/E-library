@@ -6,12 +6,15 @@ Preparatory Project based on HTML, CSS and PHP
 The aim of this project is to create a library for any individual.It has several functionality that will be extended in future improvements.
 
 ## Functionalities
- - Adding Books in the stack.
- - Explore and View All books in the Stacks
- - Validate If the Book is already Present
- - Book Details
- - Edit The Book Details
- - Remove the Book from the Stack
+-Basic CRUD Operations
+ - Adding a New Book in the Stack
+ - Editing Details of the Added Book
+ - Read More functionality(Sourcing URL)
+ - Delete A Book in the Stack
+
+- Basic UI Design with Search Functionality.
+- Pagination to hold more than Thousand books in the stack.
+- Extended Functionalities
 
 
 ## Database Schema
