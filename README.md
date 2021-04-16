@@ -27,7 +27,7 @@ The aim of this project is to create a library for any individual.It has several
  - XAMPP 
  - Code Editor(Sublime, VS Code etc)
  
- - Clone the Repository from `git@github.com:codewithdev/E-library.git` on your local machine in the `htdocs` folder of xampp.
+ - Fork This Repository In Your System.
  - Start the Server
  
  
