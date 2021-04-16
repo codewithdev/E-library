@@ -323,12 +323,50 @@ nav {
   width: 100%;
   display: flex;
   justify-content: space-around;
-  align-items: center;
   min-height: 10vh;
   background-color: #3c0000;
   font-family: "Poppins", sans-serif;
   z-index: 1;
+  padding-top: 20px;
 }
+
+nav ul .search-icon{
+  height: 40px;
+  width: 260px;
+  display: flex;
+  background: #f2f2f2;  
+  border-radius: 5px;
+  text-align: center;
+}
+nav ul .search-icon input{
+   height: 100%;
+   width: 240px;
+   border: none;
+   outline: none;
+   border-radius: 5px 0 0 5px;
+   padding: 0 15px;
+}
+nav ul .search-icon .icon{
+  height: 100%;
+  width: 40px;
+  line-height: 20px;
+  text-align: center;
+  background: #457b9d;
+  border: 1px solid #cccccc;
+  padding-left: 10px;
+  border-radius: 0 5px 0  0;
+  cursor: pointer;
+}
+
+nav ul .search-icon .icon:hover{
+  background: brown;
+  cursor: pointer;
+}
+nav ul .search-icon .icon span{
+color: #222222;
+font-size: 18px;
+}
+
 .logo {
   color: white;
   text-transform: uppercase;
@@ -342,7 +380,7 @@ nav {
 .nav-links {
   display: flex;
   justify-content: space-around;
-  width: 30%;
+  width: 50%;
 }
 
 .nav-links li {
@@ -373,6 +411,20 @@ nav {
   .nav-links {
     width: 60%;
   }
+nav ul .search-icon input{
+  width: 90%;
+  font-size: 13px;
+}
+nav ul .search-icon{
+  width: 180px;
+}
+nav ul .search-icon .icon{
+  width: 38px;
+  padding-left: 3px;
+}
+nav ul .search-icon .icon span{
+  width: 10px;
+}
 }
 
 @media screen and (max-width: 768px) {
@@ -389,6 +441,19 @@ nav {
     transform: translateX(100%);
     transition: transform 0.5s ease-in;
   }
+  nav ul .search-icon input{
+  width: 80%;
+  font-size: 10px;
+}
+nav ul .search-icon{
+  width: 150px;
+}
+nav ul .search-icon .icon{
+  width: 30px;
+}
+nav ul .search-icon .icon span{
+  width: 13px;
+}
 
   .nav-links li {
     opacity: 0;

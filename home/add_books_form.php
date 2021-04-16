@@ -59,7 +59,7 @@ include "connection.inc.php";
         <label for="description">Book Description</label>
       </div>
       <div class="col-75">
-     <textarea name= "description" class="form-control" placeholder="Enter description of the book" required row=4></textarea>
+     <textarea name= "description" class="form-control" placeholder="Enter description of the book(Upto 100 chars only)" required row=4></textarea>
       </div>
     </div>
 

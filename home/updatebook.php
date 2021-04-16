@@ -13,7 +13,7 @@ if(isset($_POST['save']))
 	$url= $_POST['url'];
 
 $res = mysqli_query($db, "UPDATE books SET isbn= '$isbn', title= '$title', author= '$author',image= '$image', description= '$desc', url= '$url' WHERE book_id= '$id'");
-if(mysqli_num_rows($res)>0) 
+if($res) 
 {
 	echo'<script type="text/javascript"> 
 		alert("Data Updated Successfully"); 
@@ -24,7 +24,7 @@ else
 {
 	echo '<script>
 	alert("Already Present");
-	window.location.href="home.php";	
+	windows.location.href="home.php";
 	</script>';
 }
 }

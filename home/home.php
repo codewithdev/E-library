@@ -14,12 +14,30 @@
     <link rel= "stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"> 
     <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="../assets/css/pagination.css">
 
   </head>
 <body>
 
 <?php 
-$res= mysqli_query($db,"SELECT* FROM `books`;");
+
+//Set the limit Per page
+$limit= 10;
+
+//If we are getting any Page
+if(isset($_GET['page'])){
+   $page= $_GET['page'];
+  }
+
+else{
+   $page=1;
+}
+
+// Set the offset
+$offset= ($page-1)*$limit;
+
+$res= mysqli_query($db,"SELECT* FROM `books` ORDER BY title ASC LIMIT {$offset}, {$limit}");
+
 
 if(mysqli_num_rows($res)>0){
   while($row= mysqli_fetch_assoc($res)){
@@ -61,27 +79,27 @@ if(mysqli_num_rows($res)>0){
       <div class="modal-body">
         
           <div class="form-group">
-            <label for="isbn" class="col-form-label">ISBN</label>
+            <label for="isbn" class="col-form-label"><strong>ISBN</strong></label>
             <input type="text" class="form-control" name="isbn" value="<?php echo $row['isbn'];?>">
           </div>
           <div class="form-group">
-            <label for="title" class="col-form-label">Enter Book Title</label>
+            <label for="title" class="col-form-label"><strong>Enter Book Title</strong></label>
             <input type="text" class="form-control" name="title" value="<?php echo $row['title'];?>">
           </div>
             <div class="form-group">
-            <label for="author" class="col-form-label">Enter Author Name</label>
+            <label for="author" class="col-form-label"><strong>Enter Author Name</strong></label>
             <input type="text" class="form-control" name="author" value="<?php echo $row['author'];?>">
           </div>
             <div class="form-group">
-            <label for="image" class="col-form-label">Image URL</label>
+            <label for="image" class="col-form-label"><strong>Image URL</strong></label>
             <input type="text" class="form-control" name="image" value="<?php echo $row['image'];?>">
           </div>
             <div class="form-group">
-            <label for="description" class="col-form-label">Enter Book Description</label>
+            <label for="description" class="col-form-label"><strong>Enter Book Description</strong></label>
             <textarea class="form-control" name="description" value="<?php echo $row['description'];?>"></textarea>
           </div>
             <div class="form-group">
-            <label for="url" class="col-form-label">Book URL</label>
+            <label for="url" class="col-form-label"><strong>Book URL</strong></label>
             <input type="text" class="form-control" name="url" value="<?php echo $row['url'];?>">
            </div>
       </div>
@@ -147,8 +165,35 @@ else{
 <button onclick=\"window.location.href='add_books_form.php'\" class=\"btn btn-info bg-primary m-5\">Contribute</button>";
  }
 ?>
-
 </ul>
+
+<!--=====================================Pagination ======================================-->
+
+<?php
+ $sql= "SELECT * FROM books";
+ $res1= mysqli_query($db,$sql);
+
+ if(mysqli_num_rows($res1)>0){
+  $total_records= mysqli_num_rows($res1);
+  
+  $total_pages= ceil($total_records/$limit);
+  
+   echo '<div class="pagination justify-content-center fixed-bottom">';
+  
+  for($i=1;$i<=$total_pages;$i++){
+
+    if($i==$page){
+      $active = "active";
+    }else
+    {
+      $active="";
+    }
+   echo '<a class= " '.$active.' " href="home.php?page='.$i.'">'.$i.'</a>';
+  }
+  echo '</div>';
+ }
+?>
+<!--==============================Pagination End=======================================-->
 
 <style type="text/css">
 

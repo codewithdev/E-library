@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel= "stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"> 
+     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 <nav>
@@ -11,6 +13,14 @@
     <ul class="nav-links">
         <li><a href="home.php">Home</a></li>
         <li><a href="add_books_form.php">Contribute</a></li>
+        <form action= "search.php" method="POST">
+        <li class="search-icon">
+            <input type="search" name= "str" placeholder="Seach any book..." required>
+             <button type="button" name="search" class="btn btn-info">
+                <i class="fas fa-search"></i>
+            </button>
+        </li>
+    </form>
     </ul>
     <div class="burger">
         <div class="line1"></div>
@@ -18,10 +28,7 @@
         <div class="line3"></div>
     </div>
 </nav>
-<style type="text/css">
 
-
-</style>
  <script src="../assets/js/script.js"></script>
 
 </body>
