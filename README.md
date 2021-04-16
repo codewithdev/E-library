@@ -7,11 +7,6 @@ The aim of this project is to create a library for any individual.It has several
 
 ## Functionalities
 -Basic CRUD Operations
- - Adding a New Book in the Stack
- - Editing Details of the Added Book
- - Read More functionality(Sourcing URL)
- - Delete A Book in the Stack
-
 - Basic UI Design with Search Functionality.
 - Pagination to hold more than Thousand books in the stack.
 - Extended Functionalities
