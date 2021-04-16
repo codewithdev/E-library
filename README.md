@@ -6,7 +6,7 @@ Preparatory Project based on HTML, CSS and PHP
 The aim of this project is to create a library for any individual.It has several functionality that will be extended in future improvements.
 
 ## Functionalities
--Basic CRUD Operations
+- Basic CRUD Operations
 - Basic UI Design with Search Functionality.
 - Pagination to hold more than Thousand books in the stack.
 - Extended Functionalities
