@@ -10,7 +10,7 @@
 
 /* Style the active/current link */
 .pagination a.active {
-  background-color: dodgerblue;
+  background-color:#457b9d;
   color: black;
 }
 

@@ -13,14 +13,18 @@
     <ul class="nav-links">
         <li><a href="home.php">Home</a></li>
         <li><a href="add_books_form.php">Contribute</a></li>
-        <form action= "search.php" method="POST">
+
+        <!-- Search Bar -->
+<form action= "search.php" method="POST">
         <li class="search-icon">
-            <input type="search" name= "str" placeholder="Seach any book..." required>
-             <button type="button" name="search" class="btn btn-info">
+            <input type="search" name= "search" placeholder="Seach any book..." required>
+             <button type="submit" name="submit" class="btn btn-info">
                 <i class="fas fa-search"></i>
             </button>
         </li>
     </form>
+    <!-- Search Bar End -->
+
     </ul>
     <div class="burger">
         <div class="line1"></div>
