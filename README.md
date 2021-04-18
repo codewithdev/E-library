@@ -1,4 +1,4 @@
-# E-library (Ongoing)
+# E-library
 Preparatory Project based on HTML, CSS and PHP
 
 
@@ -6,12 +6,10 @@ Preparatory Project based on HTML, CSS and PHP
 The aim of this project is to create a library for any individual.It has several functionality that will be extended in future improvements.
 
 ## Functionalities
- - Adding Books in the stack.
- - Explore and View All books in the Stacks
- - Validate If the Book is already Present
- - Book Details
- - Edit The Book Details
- - Remove the Book from the Stack
+- Basic CRUD Operations
+- Basic UI Design with Search Functionality.
+- Pagination to hold more than Thousand books in the stack.
+- Extended Functionalities
 
 
 ## Database Schema
@@ -29,7 +27,7 @@ The aim of this project is to create a library for any individual.It has several
  - XAMPP 
  - Code Editor(Sublime, VS Code etc)
  
- - Clone the Repository from `git@github.com:codewithdev/E-library.git` on your local machine in the `htdocs` folder of xampp.
+ - Fork This Repository In Your System.
  - Start the Server
  
  
