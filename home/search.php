@@ -144,14 +144,15 @@ include "header.php";
 <?php 
 }
 }
+else{
+   echo"<h1 style='color: white;font-size:58px; font-family: Poppins; font-weight: 600;' class=m-2>U!Oh Nothing Found Here!</h1>
+<button onclick=\"window.location.href='add_books_form.php'\" class=\"btn btn-info bg-primary m-5\">Contribute</button>";
+ }
 }
 
 /*If there are not any books Found in the Library*/
 
-else{
-   echo"<h1 style='color: black;font-size:58px; font-family: Poppins; font-weight: 600;' class=m-2>U!Oh Nothing Found Here!</h1>
-<button onclick=\"window.location.href='add_books_form.php'\" class=\"btn btn-info bg-primary m-5\">Contribute</button>";
- }
+
 ?>
 </ul>
 
